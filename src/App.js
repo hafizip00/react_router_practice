@@ -5,6 +5,9 @@ import About from './components/About';
 import Navbar from './components/Navbar';
 import Order from './components/Order';
 import Nores from './components/Nores';
+import Products from './components/Products';
+import FeaturedProducts from './components/FeaturedProducts';
+import NewProducts from './components/NewProducts';
 function App() {
 
   const navigate = useNavigate();
@@ -16,6 +19,10 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='About' element={<About/>}></Route>
         <Route path='order-summary' element={<Order/>}></Route>
+        <Route path='products' element={<Products/>}>
+          <Route path='Featured' element={<FeaturedProducts/>}></Route>
+          <Route path='new' element={<NewProducts/>}></Route>
+        </Route>
         <Route path='*' element={<Nores/>}></Route>
       </Routes>
       <button onClick={() => navigate('order-summary')}>Place Order </button>
